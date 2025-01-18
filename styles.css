@@ -1,0 +1,384 @@
+:root {
+    /* Purple colors */
+    --purple-100: hsl(254, 88%, 90%);
+    --purple-500: hsl(256, 67%, 59%);
+  
+    /* Yellow colors */
+    --yellow-100: hsl(31, 66%, 93%);
+    --yellow-500: hsl(39, 100%, 71%);
+  
+    /* Neutral colors */
+    --black-100: hsl(0, 0%, 7%);
+    --white-500: hsl(0, 0%, 100%);
+}
+
+@font-face {
+    font-family: 'DM Sans';
+    src: url('/assets/fonts/static/DMSans-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'DM Sans';
+    src: url('/assets/fonts/static/DMSans-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+  
+@font-face {
+    font-family: 'DM Sans';
+    src: url('/assets/fonts/static/DMSans-MediumItalic.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    line-height: 1;
+    font-size: 18px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:"item1 item2 item2 item6"
+                        "item1 item4 item5 item6"
+                        "item3 item8 item7 item7";
+    gap: 27px;
+    padding: 80px 160px;
+    background-color: #f5f5f5;
+    position: relative;
+}
+  
+  
+.item {
+    padding: 27px;
+    border-radius: 8px;
+}
+
+.item-1,
+.item-3 {
+    grid-area: item1;
+    background-color: var(--yellow-100);
+    color: var(--black-100);
+    font-size: 40.5px;
+    letter-spacing: -4px;
+    height: max-content;
+}
+
+.item-1 p {
+    margin-bottom: 27px;
+}
+
+.item-1 p span {
+    color: var(--purple-500);
+    font-style: italic;
+}
+
+.item-1 img {
+    margin-bottom: 54px;
+}
+
+img {
+    max-width: 100%;
+}
+  
+.item-2 {
+    grid-area: item2;
+    background-color: var(--purple-500);
+    color: var(--white-500);
+    font-size: 61px;
+    text-align: center;
+    padding-bottom: 45px;
+}
+
+.item-2 p {
+    margin: 27px 0 18px;
+}
+
+.item-2 span {
+    color: var(--yellow-500);
+}
+
+.item-2 img {
+    width: 180px;
+}
+
+.item-2 .review {
+    font-size: 18px;
+    font-weight: 400;
+    margin-top: 9px;
+}
+  
+.item-3 {
+    grid-area: item3;
+    background-color: var(--yellow-500);
+    margin-top: -198px;
+    padding-bottom: 27px;
+}
+
+.item-3 p {
+    margin: 20px 0 50px;
+}
+  
+.item-6,
+.item-4,
+.item-5 {
+    grid-area: item6;
+    background-color: var(--purple-100);
+    color: var(--black-100);
+    font-size: 31.5px; 
+    position: relative;
+    overflow: visible;  
+    z-index: 1;
+}
+
+.item-4 {
+    grid-area: item4;
+    background-color: var(--white-500);
+}
+
+.item-5 {
+    grid-area: item5;
+    background-color: var(--yellow-500);
+    height: auto;
+}
+
+.item-6::after,
+.item-4::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 100%;
+    right: -60%;
+    bottom: 0;
+    background-color: #f5f5f5;
+    z-index: 0;
+}
+
+.item-5::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    /* bottom: 50%; */
+    background-color: #f5f5f5;
+    z-index: 0;
+    height: 100px;
+}
+
+.item-4 img {
+    position: absolute;
+    top: 20%;
+    left: 70%;
+    transform: translate(-50%, -50%) scale(1.2);
+    width: 120%;
+    z-index: 0;
+    object-fit: contain;
+}
+
+.item-5 img {
+    position: absolute;
+    top: 68%;
+    left: 50%;
+    width: calc(100% - 54px);
+    transform: translate(-50%, 0) scale(1);
+    z-index: 0;
+    object-fit: contain;
+}
+
+.item-5 p {
+    margin-top: 9px;
+}
+
+.item-6 p {
+    margin: 27px 0;
+}
+
+.item-6 img {
+    position: absolute;
+    top: 51%;
+    left: 82.125%;
+    transform: translate(-50%, -50%) scale(1.4);
+    width: 120%;
+    z-index: 0;
+    object-fit: contain;
+    padding-bottom: 18px;
+}
+
+.item-6 p,
+.item-4 p {
+    position: relative;
+    z-index: 1;
+}
+
+.item-4 p {
+    margin: 75px 0 0;
+}
+
+.item-6 p:last-child {
+    font-size: 18px;
+    margin-top: 400px;
+}
+  
+.item-7 {
+    grid-area: item7;
+    background-color: var(--purple-500);
+    display: flex;
+    gap: 3px;
+    z-index: 3;
+    color: var(--white-500);
+    font-size: 40.5px;
+}
+
+.item-7 img {
+    width: 42%;
+}
+
+  
+.item-8 {
+    grid-area: item8;
+    background-color: var(--white-500);
+}
+
+.item-8 span {
+    font-size: 61px;
+}
+
+.item-8 p {
+    line-height: 1.2;
+    margin: 0 0 36px;
+}
+
+  
+/* Mobile Layout */
+@media (max-width: 768px) {
+    .grid-container {
+        display: flex;
+        flex-direction: column;
+        padding: 30px 20px;
+        gap: 35px;
+    }
+
+    .item {
+        padding: 15px;
+    }
+
+    .item-2 {
+        font-size: 45px;
+    }
+
+    .item-4 img {
+        position: relative;
+        width: 100%;
+        transform: none;
+        top: 0;
+        left: 0;
+    }
+
+    .item-4 p {
+        margin-top: 10px;
+        font-size: 24px;
+    }
+
+    .item-5 p {
+        font-size: 24px;
+        margin-bottom: 130px;
+    }
+
+    .item-5 img {
+        margin-top: -60px;
+        left: 35%;
+        width: 60%;
+    }
+
+    .item-6 {
+        font-size: 24px;
+        text-align: center;
+    }
+
+    .item-6 p:last-child {
+        font-size: 19px;
+        margin-top: 9px;
+    }
+
+    .item-6 img {
+        position: relative;
+        width: 100%;
+        transform: none;
+        top: 0;
+        left: 0;
+    }
+
+    .item-7 {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        font-size: 35px;
+    }
+
+    .item-7 img {
+        width: 83%;
+        margin-top: 10px;
+    }
+
+    .item-7 p {
+        margin-bottom: 10px;
+    }
+
+    .item-8 span {
+        display: block;
+        font-size: 45px;
+    }
+
+    .item-8 img {
+        width: 55%;
+    }
+
+    .item-1 {
+        font-size: 35px;
+        padding: 15px 30px;
+    }
+
+    .item-1 p {
+        margin-top: 15px;
+    }
+
+    .item-1 img {
+        margin-bottom: 0;
+        width: 60%;
+    }
+
+    .item-3 {
+        margin-top: 0;
+        font-size: 35px;
+    }
+
+    .item-3 p {
+        margin: 10px 0 20px;
+    }
+
+    .item-3 img {
+        width: 70%;
+    }
+
+    .item-4::after,
+    .item-6::after {
+        content: none;
+        width: 0;
+        height: 0;
+        background: none;
+    }
+}
+  
